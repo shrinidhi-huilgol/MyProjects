@@ -1,0 +1,367 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    }
+    body {
+    font-family: "Lato", sans-serif;
+    font-weight:400;
+    font-size:20px;
+    line-height:1.7;
+    color:#1b1a1a;
+    margin: 7px;
+    padding: 8px;
+}
+
+header {
+    height: 95vh;
+    width:100%;
+    background-image: linear-gradient(to right bottom,rgba(126,213,111,0.8),rgba(40,180,131,0.8)), url(hero.jpg);
+    background-size:cover;
+    background-position:top;
+    position:relative;
+    clip-path: inset(0.5% 2% 4% 0.5%);
+    background-color: #2b2e2b;
+    color: rgb(37, 34, 34);
+    padding: 70px 20px;
+    text-align: center;
+    top:20px;
+}
+.logo-box{
+    position:absolute;
+    top:25px;
+    left:40px;
+    }
+    
+    .logo{
+    height:35px;
+    }
+    .text-box {
+        transfom:translate(30%,30%);
+        text-align: center;
+        }
+        .heading-primary{
+            color:#fff;
+            text-transform:uppercase;
+            backface-visibility:hidden;
+            
+            }
+            
+            .heading-primary-main{
+            dispaly:block;
+            position:absolute;
+            top:30%;
+            left:29%;
+            font-size:60px;
+            font-weight:400;
+            letter-spacing:35px;
+            animation-name:moveInLeft;
+            animation-duration:2s;
+            
+            }
+            
+            .heading-primary-sub{
+            dispaly:block;
+            position:absolute;
+            top:45%;
+            left:29%;
+            font-size:20px;
+            font-weight:400;
+            letter-spacing:17.4px;
+            animation-name:moveInRight;
+            animation-duration:2s;
+            }
+            
+            @keyframes moveInLeft {
+            0% {
+            opacity: 0;
+            transform:translateX(-100px);
+            }
+            80% {
+            transform:translateX(10px);
+            }
+            100%{
+            opacity:1;
+            transform:translate(0);
+            }
+            
+            }
+            
+            @keyframes moveInRight {
+            0% {
+            opacity: 0;
+            transform:translateX(100px);
+            }
+            80% {
+            transform:translateX(-10px);
+            }
+            100%{
+            opacity:1;
+            transform:translate(0);
+            }
+            
+            }
+            
+            @keyframes moveInBottom {
+            0% {
+            opacity: 0;
+            transform:translateY(3rem);
+            }
+            100% {
+            opacity: 0;
+            transform:translate(0);
+            }
+            }
+    
+.header1{
+    background-color: #2b2e2b;
+    color: white;
+    padding: 60px 20px;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+}
+nav{
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #4fc777;
+    opacity: 59%;
+    width:98%;
+    position: relative;
+    height: 70px;
+}
+nav ul {
+    justify-content: space-around;
+    text-align: center;
+    list-style-type: none;
+    padding: 2px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: rgb(17, 17, 17);
+    text-decoration: none;
+}
+@media (max-width:600px) {
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #004274;
+        gap: 0;
+        overflow: hidden;
+    }
+    nav ul li{
+        padding: 20px;
+        padding-top: 0;
+    }
+    .menu-icon{
+        display: block;
+    }
+    #menuList{
+        transition: all 0.5s;
+    }
+}
+
+#hero {
+    background-image: url('nat-7.jpg');
+    background-size: cover;
+    color: rgb(75, 63, 63);
+    text-align: center;
+    padding: 100px 60px;
+    height:"70%;"
+}
+
+.btn {
+    background-color: #f44336;
+    color: rgb(245, 240, 240);
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+#destinations, #packages, #about {
+    padding: 20px;
+    
+}
+
+.destination, .package {
+    border: 1px solid #f3f2f2;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.destination img {
+    height:450px;
+    width: 100%;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #1b1a1a;
+    padding: 20px;
+}
+
+#destinations {
+    text-align: center;
+    padding: 50px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.destination {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto; 
+    padding: 20px;
+}
+
+.card {
+    width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.card-description {
+    font-size: 16px;
+    color: #5a5959;
+}
+.card-description:hover{
+    color: #190e4b;
+}
+
+
+.card-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #328b29;
+}
+
+
+@media (max-width: 768px) {
+    .destination {
+        justify-content: center;
+    }
+
+    .card {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 200px;
+    }
+}
+
+
+
+.price {
+    font-weight: bold;
+}
+#about {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#about h3 {
+    font-size: 1.8em;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about ul li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+#about p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+   
+}
+.footer_logo-box{
+    position:absolute;
+    top:25px;
+    left:40px;
+    }
+    
+    footer_logo{
+    height:5px;
+    }

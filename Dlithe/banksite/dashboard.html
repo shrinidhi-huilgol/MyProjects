@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - BankSite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BankSite</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html" id="logout">Logout</a>
+        </nav>
+    </header>
+
+    <section class="dashboard-container">
+        <div class="dashboard-card">
+            <h2>Your Account</h2>
+            <p id="balance">Loading balance...</p>
+            <button onclick="transfer()">Transfer Funds</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BankSite. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

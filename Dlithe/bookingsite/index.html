@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Validation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="validation.js"></script>
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"], button {
+            background-color: #176fd4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #18a748;
+        }
+        .error {
+            color: #ff0000;
+            font-size: 14px;
+        }
+        .success {
+            color: #28a745;
+            font-size: 14px;
+        }
+    
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            max-width: 400px;
+        }
+        .popup h3 {
+            margin-top: 0;
+        }
+        .popup .popup-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        .popup .popup-btn:hover {
+            background-color: #1750cc;
+        }
+        
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Book Your Trip</h2>
+        <form id="bookingForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <span class="error" id="nameError"></span>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <span class="error" id="emailError"></span>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            <span class="error" id="phoneError"></span>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" required min="18" max="100">
+            <span class="error" id="ageError"></span>
+
+            <label for="members">Number of Members</label>
+            <input type="number" id="members" name="members" placeholder="Enter number of members" required min="1">
+            <span class="error" id="membersError"></span>
+
+            <input type="submit" value="Submit Booking">
+            <div class="success" id="successMessage"></div>
+        </form>
+    </div>
+
+
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup" id="popupMessage">
+        <h3>Booking Successful!</h3>
+        <p>Your booking has been successfully submitted.</p>
+        <button class="popup-btn" id="closePopupBtn">Close</button>
+    </div>
+
+    <script>
+
+        const form = document.getElementById('bookingForm');
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const age = document.getElementById('age');
+        const members = document.getElementById('members');
+        
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const phoneError = document.getElementById('phoneError');
+        const ageError = document.getElementById('ageError');
+        const membersError = document.getElementById('membersError');
+        const successMessage = document.getElementById('successMessage');
+        const popupMessage = document.getElementById('popupMessage');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+
+
+        function validateForm(event) {
+            event.preventDefault(); 
+            let isValid = true;
+
+    
+            nameError.textContent = '';
+            emailError.textContent = '';
+            phoneError.textContent = '';
+            ageError.textContent = '';
+            membersError.textContent = ' ';
+            successMessage.textContent = '';
+
+    
+            if (name.value.trim().length < 3) {
+                nameError.textContent = "Please enter a valid name (at least 3 characters).";
+                isValid = false;
+            }
+
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email.value)) {
+                emailError.textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+        
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone.value)) {
+                phoneError.textContent = "Please enter a valid 10-digit phone number.";
+                isValid = false;
+            }
+
+            if (age.value < 10 || age.value > 100) {
+                ageError.textContent = "Please enter a valid age (18-100).";
+                isValid = false;
+            }
+
+
+            
+            if (members.value < 1) {
+                membersError.textContent = "Please enter a valid number of members (at least 1).";
+                isValid = false;
+            }
+
+            
+            if (isValid) {
+                successMessage.textContent = "Your booking has been successfully submitted!";
+                popupOverlay.style.display = 'block';
+                popupMessage.style.display = 'block';
+            }
+        }
+
+    
+        closePopupBtn.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+            popupMessage.style.display = 'none';
+        });
+
+        
+        form.addEventListener('submit', validateForm);
+    </script>
+</body>
+</html>

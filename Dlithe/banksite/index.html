@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>Banking | Secure & Reliable Services</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-box">
+            <img src="favicon.png" alt="logo" class="logo">
+        </div>
+        <div class="text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary-main">Your Bank</span>
+                <span class="heading-primary-sub">Secure & Reliable Services</span>
+            </h1>
+                <div class="menu-icon" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <div id="mySidebar" class="sidebar">
+        <button class="close-btn" onclick="closeSidebar()">&times;</button>
+        <a href="#services">Services</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Welcome to Your Trusted Banking Partner</h2>
+        <p>Manage your finances with ease and security. We're here to assist you with all your banking needs.</p>
+        <a href="#services" class="btn">Explore Services</a>
+    </section>
+
+    <!-- Banking Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+
+        <div class="service-card">
+            <h3>Account Management</h3>
+            <p>Access your bank account anytime, anywhere with secure online banking services.</p>
+            <a href="account.html">Manage Account</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Loans</h3>
+            <p>Get the financial support you need with personal, home, or auto loans. Fast approval process.</p>
+            <a href="loans.html">Apply Now</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Credit Cards</h3>
+            <p>Enjoy exclusive rewards and benefits with our range of credit cards tailored to your needs.</p>
+            <a href="cards.html">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard">
+        <h2>Account Dashboard</h2>
+        <div>
+            <p><strong>Account Balance:</strong> $15,320.50</p>
+            <p><strong>Recent Transactions:</strong></p>
+            <ul>
+                <li>Deposit: +$500 - 02/25/2025</li>
+                <li>Withdrawal: -$200 - 02/24/2025</li>
+                <li>Transfer: -$1,000 to "John Doe" - 02/20/2025</li>
+            </ul>
+        </div>
+
+        <h3>Make a Transfer</h3>
+        <form id="transaction-form" onsubmit="return validateTransaction()">
+            <input type="text" id="recipient" placeholder="Recipient's Name" required>
+            <input type="number" id="amount" placeholder="Amount (Rs)" required>
+            <input type="text" id="message" placeholder="Message (Optional)">
+            <button type="submit">Send Payment</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <img src="logo-white.png" alt="logo" class="footer__logo">
+        <p>&copy; 2025 Your Bank. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle sidebar visibility
+        function toggleSidebar() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        // Form validation for transaction
+        function validateTransaction() {
+            const amount = document.getElementById('amount').value;
+            const recipient = document.getElementById('recipient').value;
+            
+            if (amount <= 0) {
+                alert("Please enter a valid amount.");
+                return false;
+            }
+            
+            if (recipient.trim() === "") {
+                alert("Please enter the recipient's name.");
+                return false;
+            }
+            
+            alert("Payment Sent Successfully!");
+            return true;
+        }
+    </script>
+</body>
+
+</html>

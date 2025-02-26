@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple News Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2px ;
+            padding: 5px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color:#b8fef9;
+            color:black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: underline;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 20px;
+        }
+
+        .article {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            width: 45%;
+        }
+
+        .article h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            background-color:#fefe92;
+        }
+
+        .article p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            position: fixed;
+            width: 100%;
+            bottom: 1px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Simple News Website</h1>
+        <p>Stay up to date with the latest news</p>
+    </header>
+
+    <nav>
+        <a href="home">Home</a>
+        <a href="world">World</a>
+        <a href="technology">Technology</a>
+        <a href="sports">Sports</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Article 1 -->
+        <div class="article">
+            <h2>PM Modi Meets Elon Musk During US Visit :</h2>
+            <p>Indian Prime Minister Narendra Modi met with Elon Musk, discussing topics such as space, mobility, technology, and innovation. Modi highlighted India's commitment to reform and governance during their conversation.</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article">
+            <h2>Europe Data Center Capacity Surge :</h2>
+            <p>Europe is expected to experience a record increase in data center capacity in 2025, driven by the expansion of AI and cloud computing. CBRE forecasts a capacity of 937 megawatts, with significant growth in major markets like London, Frankfurt, and Milan.</p>
+            <a href="#">Read more</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Simple News Website | All Rights Reserved</p>
+        <div class="footer-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

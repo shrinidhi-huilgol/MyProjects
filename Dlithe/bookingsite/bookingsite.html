@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.google.com/?preview.layout=grid&query=lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title> Natours | Exciting tours for adventurous people</title>
+    <style>
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            color: white;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            background-color: transparent;
+            border: none;
+        }
+
+    
+        .menu-icon {
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+        }
+        
+
+        .open-btn {
+            display: block;
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-box">
+            <img src="logo-white.png" alt="logo" class="logo">
+        </div>
+        <div class="text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary-main">Outdoors</span>
+                <span class="heading-primary-sub">is where life happens</span>
+            </h1>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-icon" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    
+    <div id="mySidebar" class="sidebar">
+        <button class="close-btn" onclick="closeSidebar()">&times;</button>
+        <a href="#destinations">Destinations</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <section id="hero">
+        <h2>Your Adventure Awaits!</h2>
+        <p>Book your next trip with us and explore beautiful destinations.</p>
+        <a href="#destinations" class="btn">View Packages</a>
+    </section>
+
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        
+    
+        <div>
+            <label for="destinationFilter">Filter by Destination:</label>
+            <select id="destinationFilter" onchange="filterDestinations()">
+                <option value="all">All</option>
+                <option value="paris">Paris</option>
+                <option value="bali">Bali</option>
+                <option value="kerala">Kerala</option>
+                <option value="Taj">Taj Mahal</option>
+                <option value="Mysore">Mysore</option>
+                <option value="temple">Akshardham</option>
+            </select>
+        </div>
+        <div class="destination">
+            
+            <div class="card" data-destination="paris">
+                <img src="paris.jpg" alt="Paris" class="card-img">
+                <div class="card-content">
+                    <h2 class="card-title">Paris</h2>
+                    <p class="card-description">The place of beauty and love.</p>
+                    <a href="index.html" class="card-button">Book now</a>
+                </div>
+            </div>
+    
+            
+            <div class="card" data-destination="bali">
+                <img src="bali.jpg" alt="Bali" class="card-img">
+                <div class="card-content">
+                    <h2 class="card-title">Bali</h2>
+                    <p class="card-description">A tropical paradise with stunning beaches.</p>
+                    <a href="index.html" class="card-button">Book now</a>
+                </div>
+            </div>
+    
+        
+            <div class="card" data-destination="kerala">
+                <img src="kerala.jpg" alt="Kerala" class="card-img">
+                <div class="card-content">
+                    <h2 class="card-title">Kerala</h2>
+                    <p class="card-description">Jatayu Nature Park Kerala.</p>
+                    <a href="index.html" class="card-button">Book now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+    <section id="destinations">
+
+        <div class="destination">
+    
+            <div class="card" data-destination="Taj">
+                <img src="Taj-Mahal.jpg" alt="Taj Mahal - Symbol of love " class="card-img">
+                <div class="card-content">
+                    <h2 class="card-title">Taj Mahal</h2>
+                    <p class="card-description">The symbol of enduring love in Agra.</p>
+                    <a href="index.html" class="card-button">Book now</a>
+                </div>
+            </div>
+    
+        
+            <div class="card" data-destination="Mysore">
+                <img src="mysore.jpg" alt="Mysore - The place of heritage and culture" class="card-img">
+                <div class="card-content">
+                    <h2 class="card-title">Mysore</h2>
+                    <p class="card-description">A place of heritage and culture in karnataka.</p>
+                    <a href="index.html" class="card-button">Book now</a>
+                </div>
+            </div>
+    
+            <div class="card" data-destination="temple">
+                <img src="temple.jpg" alt="Akshardham - God's Own Country" class="card-img">
+                <div class="card-content">
+                    <h2 class="card-title">Akshardham Temple</h2>
+                    <p class="card-description">A worlds largest culturally-rich temple in Delhi.</p>
+                    <a href="index.html" class="card-button">Book now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+    
+        function filterDestinations() {
+            var filter = document.getElementById("destinationFilter").value;
+            var cards = document.querySelectorAll(".card");
+
+            cards.forEach(function (card) {
+                if (filter === "all" || card.getAttribute("data-destination") === filter) {
+                    card.style.display = "block"; // Show card
+                } else {
+                    card.style.display = "none"; // Hide card
+                }
+            });
+        }
+    </script>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a dedicated travel agency with years of experience in providing the best travel experiences for our clients. Our goal is to make your adventures unforgettable by offering personalized travel packages to some of the world's most amazing destinations.</p>
+    
+        <h3>Our Mission</h3>
+        <p>Our mission is to inspire people to explore the world and experience the beauty of nature. We believe in the power of travel to enrich lives, create lasting memories, and bring people closer to nature.</p>
+    
+        <h3>Our Vision</h3>
+        <p>We aim to be the leading provider of unforgettable travel experiences, offering tours that go beyond the ordinary. Our vision is to continue to grow as a trusted travel agency that delivers exceptional customer service and creates lifetime memories for every traveler.</p>
+    
+        <h3>Why Choose Us?</h3>
+        <ul>
+            <li>Expert Guides: Our team consists of experienced and passionate guides who know the destinations inside out.</li>
+            <li>Customizable Packages: We offer flexible travel packages that can be tailored to your specific needs and preferences.</li>
+            <li>Affordable Prices: We believe in making travel accessible to everyone without compromising on quality.</li>
+            <li>Safe and Comfortable Travel: Your safety and comfort are our top priority throughout your journey.</li>
+            <li>24/7 Support: We provide round-the-clock support for any inquiries or concerns during your trip.</li>
+        </ul>
+    
+        <h3>Our Values</h3>
+        <p>At the heart of everything we do, we are guided by the following values:</p>
+        <ul>
+            <li><strong>Integrity:</strong> We are committed to providing honest, reliable, and transparent services to our clients.</li>
+            <li><strong>Customer Satisfaction:</strong> We always prioritize our customers' needs and strive to exceed their expectations.</li>
+            <li><strong>Sustainability:</strong> We believe in promoting eco-friendly travel practices and contributing to the conservation of the environments we explore.</li>
+            <li><strong>Passion:</strong> We are passionate about travel, adventure, and helping our clients create unforgettable memories.</li>
+        </ul>
+    
+        <h3>Our Story</h3>
+        <p>Founded in 2010, we started as a small, family-run business with a deep love for adventure and a desire to share that love with others. Over the years, we have grown into a trusted travel agency known for our exceptional service, attention to detail, and dedication to providing unforgettable experiences. Our team of travel experts works tirelessly to ensure that every trip is seamless, exciting, and tailored to each individual's needs.</p>
+    </section>
+    <footer id="contact">
+        <div class="footer__logo-box">
+                <img src="logo-green-2x.png" alt="footer logo" class="footer__logo">
+            </div>
+        <h2>Contact Us</h2>
+        <p>Email: Natours@travelagency.com | Phone: +123 456 7890</p>
+        <p>&copy; 2025 Travel Agency. All rights reserved.</p>
+    </footer>
+
+    
+</body>
+
+</html>
